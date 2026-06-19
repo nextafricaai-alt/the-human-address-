@@ -82,7 +82,7 @@ function initSubscriptionForms() {
   const subscribeForms = document.querySelectorAll('.subscribe-form');
   
   // FormSubmit AJAX endpoint — delivers subscriber emails to the address inbox
-  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/hudson.tim.uk@gmail.com';
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/533f15f3a56b7ba03d1cf770279fd083';
 
   subscribeForms.forEach(form => {
     form.addEventListener('submit', (e) => {
