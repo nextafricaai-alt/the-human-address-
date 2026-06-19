@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Human Address — Weekly Thought-Leadership & Faith Platform</title>
+  <meta name="description" content="What did God mean when He made a human being? A cinematic thought-leadership platform on faith, leadership, family, technology, and the future. Hosted by Hudson Tumusiime.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container nav-centered">
+      <nav class="nav-links nav-left">
+        <a href="the-heart.html" class="nav-link">The Heart</a>
+        <a href="addresses.html" class="nav-link">Addresses</a>
+      </nav>
+      <a href="index.html" class="logo logo-center">
+        <img src="assets/logo-gold.png" alt="The Human Address logo" class="logo-img">
+      </a>
+      <nav class="nav-links nav-right">
+        <a href="speaking.html" class="nav-link">Speaking</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#subscribe" class="nav-btn">Subscribe</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span class="theme-toggle-sun">☀</span>
+          <span class="theme-toggle-moon">☾</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="assets/hero_background.png" alt="Wooden podium backdrop" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-overlay-vertical"></div>
+    
+    <div class="hero-content">
+      <div class="eyebrow reveal" data-delay="0.1">A Weekly Address &nbsp;·&nbsp; One Voice, One Podium</div>
+      <h1 class="hero-title reveal" data-delay="0.3">The Future of Africa is Human</h1>
+      <div class="divider-gold reveal" data-delay="0.5"></div>
+      <p class="hero-desc reveal" data-delay="0.6">A cinematic thought-leadership platform on what it means to be human — leadership, family, faith, technology, and the future, from an African lens. Hosted by Hudson Tumusiime.</p>
+      <div class="hero-actions reveal" data-delay="0.8">
+        <a href="address.html" class="btn-primary">Watch the Latest Address</a>
+        <a href="addresses.html?tab=writing" class="btn-text">The Address in Writing</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <!-- Manifesto Section -->
+  <section class="section-padding container">
+    <div class="manifesto-container">
+      <div class="eyebrow reveal">The Manifesto</div>
+      <p class="manifesto-text reveal" data-delay="0.15">
+        We have forgotten what a human being is. <br>
+        <span>Every week, from one podium, we remember.</span>
+      </p>
+
+      <div class="manifesto-cards reveal" data-delay="0.25">
+        <div class="manifesto-card">
+          <div class="card-eyebrow">I</div>
+          <h3>Leadership</h3>
+          <p>The single accountable voice at the podium.</p>
+        </div>
+        <div class="manifesto-card">
+          <div class="card-eyebrow">II</div>
+          <h3>Family</h3>
+          <p>The first government and origin of duty.</p>
+        </div>
+        <div class="manifesto-card">
+          <div class="card-eyebrow">III</div>
+          <h3>Faith</h3>
+          <p>The weight and belonging of being made.</p>
+        </div>
+        <div class="manifesto-card">
+          <div class="card-eyebrow">IV</div>
+          <h3>Technology</h3>
+          <p>Restoring human limit against the machine.</p>
+        </div>
+      </div>
+
+      <div class="vertical-line reveal" data-delay="0.4"></div>
+    </div>
+  </section>
+
+  <!-- Latest Address spotlight Section -->
+  <section class="section-padding container" style="padding-top: 40px; padding-bottom: 150px;">
+    <div class="latest-grid">
+      <div class="reveal">
+        <div class="latest-media">
+          <video
+            id="episode-1-player"
+            class="latest-img"
+            controls
+            preload="metadata"
+            poster="assets/latest_still.jpeg"
+          >
+            <source src="assets/episode_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      
+      <div class="reveal" data-delay="0.12">
+        <div class="eyebrow" style="margin-bottom: 20px;">The Latest Address &nbsp;·&nbsp; Season 1 · No. 07</div>
+        <h2 class="latest-title">The Weight of Being Made</h2>
+        <p class="latest-excerpt">To be made is to be answerable. This week's address returns to the first question — not what we can become, but what we already are, and to Whom we belong.</p>
+        <div class="latest-actions">
+          <a href="address.html" class="btn-primary">Watch & Read</a>
+          <a href="addresses.html" class="btn-text">All Addresses</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="section-padding quote-section">
+    <div class="container quote-container">
+      <p class="quote-text reveal">"There is a stillness here that most of the internet has forgotten how to make. You do not watch The Human Address. You sit before it."</p>
+      <div class="quote-author reveal" data-delay="0.2">A Listener · Kampala</div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section id="subscribe" class="section-padding container">
+    <div class="subscribe-section">
+      <div class="eyebrow reveal">The Address in Writing</div>
+      <h2 class="subscribe-title reveal" data-delay="0.12">Receive each address as a letter.</h2>
+      <p class="subscribe-desc reveal" data-delay="0.2">The free written version of every episode — delivered the morning it airs. No noise. One letter, once a week.</p>
+      
+      <form class="subscribe-form reveal" data-delay="0.3">
+        <input type="email" required placeholder="your@email.com" class="subscribe-input">
+        <button type="submit" class="subscribe-submit">Subscribe</button>
+      </form>
+      <div class="subscribe-note reveal" data-delay="0.4">Free. Unsubscribe anytime.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo-gold.png" alt="The Human Address logo" class="logo-img footer-logo-img">
+        </div>
+        <p class="footer-tagline">What did God mean when He made a human being?</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <div class="footer-links">
+          <a href="the-heart.html" class="footer-link">The Heart</a>
+          <a href="addresses.html" class="footer-link">Addresses</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="speaking.html" class="footer-link">Speaking & Partnership</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#subscribe" class="footer-link">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 The Human Address. Hosted by Hudson Tumusiime.</div>
+      <div class="footer-motto">One Voice · One Podium · One Truth</div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>

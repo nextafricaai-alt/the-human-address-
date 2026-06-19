@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addresses — The Human Address</title>
+  <meta name="description" content="Every address, kept and searchable. Browse the full library of weekly addresses by Hudson Tumusiime, and read the written versions.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .library-hero { padding: 200px 48px 60px; max-width: 1280px; margin: 0 auto; }
+    .library-hero h1 { font-family: var(--font-serif); font-weight: 300; font-size: clamp(36px, 5.2vw, 72px); line-height: 1.05; color: var(--color-text-primary); margin-top: 20px; }
+
+    /* Tab switcher */
+    .tab-bar { display: flex; gap: 0; border-bottom: 1px solid rgba(240,237,230,0.12); max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+    .tab-btn { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-text-muted); background: transparent; border: none; border-bottom: 2px solid transparent; padding: 18px 28px; cursor: pointer; margin-bottom: -1px; transition: all 0.3s ease; }
+    .tab-btn.active { color: var(--color-gold); border-bottom-color: var(--color-gold); }
+    .tab-btn:hover { color: var(--color-text-primary); }
+
+    /* Filter & Search bar */
+    .filter-bar { max-width: 1280px; margin: 0 auto; padding: 32px 48px 20px; display: flex; gap: 24px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .theme-filters { display: flex; gap: 10px; flex-wrap: wrap; }
+    .filter-btn { background: transparent; border: 1px solid rgba(240,237,230,0.16); color: var(--color-text-secondary); font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; padding: 8px 16px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; }
+    .filter-btn.active { border-color: rgba(201,146,42,0.7); color: var(--color-gold); }
+    .filter-btn:hover { border-color: rgba(201,146,42,0.4); color: var(--color-text-primary); }
+    .search-wrap { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(240,237,230,0.22); min-width: 260px; padding-bottom: 8px; }
+    .search-icon { color: var(--color-text-muted); font-size: 15px; }
+    .search-input { background: transparent; border: none; outline: none; color: var(--color-text-primary); font-family: var(--font-sans); font-size: 14px; padding: 4px 2px; width: 100%; }
+    .search-input::placeholder { color: rgba(240,237,230,0.3); }
+
+    /* Episode grid */
+    .episode-grid { max-width: 1280px; margin: 0 auto; padding: 40px 48px 120px; display: grid; grid-template-columns: repeat(3,1fr); gap: 52px 40px; }
+    @media(max-width:1000px){ .episode-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:640px){ .episode-grid { grid-template-columns: 1fr; } }
+    .episode-card { display: block; cursor: pointer; }
+    .episode-thumb { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1c1507 0%, #0d0d0d 100%); position: relative; overflow: hidden; margin-bottom: 22px; border: 1px solid rgba(201, 146, 42, 0.15); border-radius: 12px; }
+    .episode-thumb-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,10,0.4), transparent); }
+    .episode-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .ep-season { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-gold); }
+    .ep-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,237,230,0.3); }
+    .ep-theme { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-text-muted); }
+    .ep-title { font-family: var(--font-serif); font-weight: 500; font-size: 24px; line-height: 1.18; color: var(--color-text-primary); margin-bottom: 10px; transition: color 0.3s ease; }
+    .episode-card:hover .ep-title { color: var(--color-gold); }
+    .ep-excerpt { font-family: var(--font-serif); font-weight: 300; font-size: 16px; line-height: 1.5; color: var(--color-text-secondary); }
+    .empty-state { padding: 80px 48px; text-align: center; font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--color-text-muted); }
+
+    /* Writing tab styles */
+    .writing-list { max-width: 860px; margin: 0 auto; padding: 40px 48px 120px; }
+    .letter-item { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+    .letter-item:last-child { border-bottom: none; }
+    .letter-date { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 10px; }
+    .letter-theme { display: inline-block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-gold); border: 1px solid rgba(201,146,42,0.35); border-radius: 50px; padding: 4px 14px; margin-bottom: 20px; }
+    .letter-title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); line-height: 1.2; color: var(--color-text-primary); margin-bottom: 14px; }
+    .letter-title:hover { color: var(--color-gold); }
+    .letter-excerpt { font-family: var(--font-serif); font-weight: 300; font-size: 18px; line-height: 1.6; color: var(--color-text-secondary); }
+
+    /* Subscribe inline banner */
+    .subscribe-banner { background: #0E0E0E; border: 1px solid var(--color-border-gold); padding: 56px 48px; max-width: 1280px; margin: 0 auto 0; text-align: center; }
+    .subscribe-banner h2 { font-family: var(--font-serif); font-size: clamp(24px, 3vw, 38px); font-weight: 400; color: var(--color-text-primary); margin-bottom: 12px; }
+    .subscribe-banner p { font-family: var(--font-serif); font-weight: 300; font-size: 18px; color: var(--color-text-secondary); margin-bottom: 32px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container nav-centered">
+      <nav class="nav-links nav-left">
+        <a href="the-heart.html" class="nav-link">The Heart</a>
+        <a href="addresses.html" class="nav-link active">Addresses</a>
+      </nav>
+      <a href="index.html" class="logo logo-center">
+        <img src="assets/logo-gold.png" alt="The Human Address logo" class="logo-img">
+      </a>
+      <nav class="nav-links nav-right">
+        <a href="speaking.html" class="nav-link">Speaking</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html#subscribe" class="nav-btn">Subscribe</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span class="theme-toggle-sun">☀</span>
+          <span class="theme-toggle-moon">☾</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="library-hero">
+    <div class="eyebrow reveal">The Library</div>
+    <h1 class="reveal" data-delay="0.1">Every address, kept and searchable.</h1>
+  </section>
+
+  <!-- Tab Bar: Addresses | In Writing -->
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tab-video" onclick="switchTab('video')">Video Addresses</button>
+    <button class="tab-btn" id="tab-writing" onclick="switchTab('writing')">In Writing</button>
+  </div>
+
+  <!-- VIDEO TAB -->
+  <div id="panel-video">
+    <div class="filter-bar">
+      <div class="theme-filters" id="theme-filters">
+        <button class="filter-btn active" data-theme="All">All</button>
+        <button class="filter-btn" data-theme="Leadership">Leadership</button>
+        <button class="filter-btn" data-theme="Family">Family</button>
+        <button class="filter-btn" data-theme="Faith">Faith</button>
+        <button class="filter-btn" data-theme="Technology">Technology</button>
+        <button class="filter-btn" data-theme="The Future">The Future</button>
+      </div>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search-input" class="search-input" placeholder="Search addresses…">
+      </div>
+    </div>
+    <div class="episode-grid" id="episode-grid"></div>
+    <div class="empty-state" id="empty-state" style="display:none;">No addresses match — try another theme or word.</div>
+  </div>
+
+  <!-- IN WRITING TAB -->
+  <div id="panel-writing" style="display:none;">
+    <div class="subscribe-banner">
+      <h2>Receive each address as a letter.</h2>
+      <p>The free written version of every episode — delivered the morning it airs.</p>
+      <form class="subscribe-form" style="max-width:440px;">
+        <input type="email" required placeholder="your@email.com" class="subscribe-input">
+        <button type="submit" class="subscribe-submit">Subscribe</button>
+      </form>
+      <div class="subscribe-note" style="margin-top:12px;">Free. Unsubscribe anytime.</div>
+    </div>
+    <div class="writing-list">
+      <div class="letter-item reveal">
+        <div class="letter-date">Jun 14, 2026</div>
+        <div class="letter-theme">Faith</div>
+        <a href="address.html" class="letter-title" style="display:block;">The Weight of Being Made</a>
+        <p class="letter-excerpt">To be made is to be answerable — and answerability is not a burden but a belonging.</p>
+      </div>
+      <div class="letter-item reveal" data-delay="0.05">
+        <div class="letter-date">Jun 07, 2026</div>
+        <div class="letter-theme">Leadership</div>
+        <a href="address.html" class="letter-title" style="display:block;">The Loneliness of the Podium</a>
+        <p class="letter-excerpt">Why the single accountable voice is the most endangered, and most needed, thing we have.</p>
+      </div>
+      <div class="letter-item reveal" data-delay="0.1">
+        <div class="letter-date">May 31, 2026</div>
+        <div class="letter-theme">Family</div>
+        <a href="address.html" class="letter-title" style="display:block;">The First Government</a>
+        <p class="letter-excerpt">Before the state, before the church, before the firm — the household teaches us what we are.</p>
+      </div>
+      <div class="letter-item reveal" data-delay="0.15">
+        <div class="letter-date">May 24, 2026</div>
+        <div class="letter-theme">Technology</div>
+        <a href="address.html" class="letter-title" style="display:block;">Machines That Forget the Maker</a>
+        <p class="letter-excerpt">What we lose when we let the tool define the human, and how to take the question back.</p>
+      </div>
+      <div class="letter-item reveal" data-delay="0.2">
+        <div class="letter-date">May 17, 2026</div>
+        <div class="letter-theme">The Future</div>
+        <a href="address.html" class="letter-title" style="display:block;">A Continent the World Calls Young</a>
+        <p class="letter-excerpt">Africa is treated as tomorrow. It has something old and necessary to say about being human.</p>
+      </div>
+      <div class="letter-item reveal" data-delay="0.25">
+        <div class="letter-date">May 10, 2026</div>
+        <div class="letter-theme">Faith</div>
+        <a href="address.html" class="letter-title" style="display:block;">On Being Intended</a>
+        <p class="letter-excerpt">You are not an accident of matter. The most unfashionable sentence is also the most freeing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo-gold.png" alt="The Human Address logo" class="logo-img footer-logo-img">
+        </div>
+        <p class="footer-tagline">What did God mean when He made a human being?</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <div class="footer-links">
+          <a href="the-heart.html" class="footer-link">The Heart</a>
+          <a href="addresses.html" class="footer-link">Addresses</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="speaking.html" class="footer-link">Speaking & Partnership</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="index.html#subscribe" class="footer-link">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 The Human Address. Hosted by Hudson Tumusiime.</div>
+      <div class="footer-motto">One Voice · One Podium · One Truth</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    const ALL_EPISODES = [
+      { id:'addr-1', n:'07', theme:'Faith',       title:'The Weight of Being Made',        excerpt:'To be made is to be answerable — and answerability is not a burden but a belonging.' },
+      { id:'addr-2', n:'06', theme:'Leadership',  title:'The Loneliness of the Podium',    excerpt:'Why the single accountable voice is the most endangered, and most needed, thing we have.' },
+      { id:'addr-3', n:'05', theme:'Family',      title:'The First Government',             excerpt:'Before the state, before the church, before the firm — the household teaches us what we are.' },
+      { id:'addr-4', n:'04', theme:'Technology',  title:'Machines That Forget the Maker',  excerpt:'What we lose when we let the tool define the human, and how to take the question back.' },
+      { id:'addr-5', n:'03', theme:'The Future',  title:'A Continent the World Calls Young',excerpt:'Africa is treated as tomorrow. It has something old and necessary to say about being human.' },
+      { id:'addr-6', n:'02', theme:'Faith',       title:'On Being Intended',               excerpt:'You are not an accident of matter. The most unfashionable sentence is also the most freeing.' },
+      { id:'addr-7', n:'01', theme:'Leadership',  title:'One Voice, One Podium, One Truth', excerpt:'The inaugural address — why this platform exists, and the form it has chosen to keep.' },
+      { id:'addr-8', n:'00', theme:'Family',      title:'The House We Are Building',       excerpt:'A father\u2019s meditation on inheritance, memory, and the people we are responsible for.' },
+      { id:'addr-9', n:'08', theme:'Technology',  title:'The Quiet Against the Feed',      excerpt:'Stillness as resistance in an economy engineered to keep us from ever sitting down.' },
+    ];
+
+    let activeTheme = 'All';
+    let searchQuery = '';
+
+    function renderGrid() {
+      const q = searchQuery.toLowerCase();
+      const filtered = ALL_EPISODES.filter(e =>
+        (activeTheme === 'All' || e.theme === activeTheme) &&
+        (q === '' || e.title.toLowerCase().includes(q) || e.excerpt.toLowerCase().includes(q) || e.theme.toLowerCase().includes(q))
+      );
+      const grid = document.getElementById('episode-grid');
+      const empty = document.getElementById('empty-state');
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      grid.innerHTML = filtered.map(e => `
+        <a href="address.html" class="episode-card">
+          <div class="episode-thumb"><div class="episode-thumb-overlay"></div></div>
+          <div class="episode-meta">
+            <span class="ep-season">Season 1 · No. ${e.n}</span>
+            <span class="ep-dot"></span>
+            <span class="ep-theme">${e.theme}</span>
+          </div>
+          <div class="ep-title">${e.title}</div>
+          <p class="ep-excerpt">${e.excerpt}</p>
+        </a>
+      `).join('');
+    }
+
+    // Theme filters
+    document.getElementById('theme-filters').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTheme = btn.dataset.theme;
+      renderGrid();
+    });
+
+    // Search
+    document.getElementById('search-input').addEventListener('input', e => {
+      searchQuery = e.target.value;
+      renderGrid();
+    });
+
+    // Tab switching
+    function switchTab(tab) {
+      document.getElementById('panel-video').style.display = tab === 'video' ? 'block' : 'none';
+      document.getElementById('panel-writing').style.display = tab === 'writing' ? 'block' : 'none';
+      document.getElementById('tab-video').classList.toggle('active', tab === 'video');
+      document.getElementById('tab-writing').classList.toggle('active', tab === 'writing');
+    }
+
+    // Check URL parameters for active tab
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get('tab');
+      if (tab === 'writing') {
+        switchTab('writing');
+      } else {
+        switchTab('video');
+      }
+    });
+
+    renderGrid();
+  </script>
+</body>
+</html>

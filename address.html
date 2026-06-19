@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weight of Being Made — The Human Address</title>
+  <meta name="description" content="Season 1 · No. 07 · Faith. To be made is to be answerable. This week's address by Hudson Tumusiime.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .ep-hero { padding: 180px 48px 40px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .back-link { display: inline-block; font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 32px; transition: color 0.3s; }
+    .back-link:hover { color: var(--color-gold); }
+    .ep-meta-label { font-size: 12px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 24px; }
+    .ep-hero h1 { font-family: var(--font-serif); font-weight: 300; font-size: clamp(36px, 5.2vw, 72px); line-height: 1.06; color: var(--color-text-primary); margin-bottom: 28px; }
+    .ep-date { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-muted); }
+    .video-section { padding: 30px 48px 60px; max-width: 1080px; margin: 0 auto; }
+    .video-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden; border: 1px solid var(--color-border); border-radius: 12px; }
+    .video-wrap video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .transcript-section { padding: 80px 48px 60px; max-width: 720px; margin: 0 auto; }
+    .transcript-label { font-size: 12px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 40px; text-align: center; }
+    .transcript-p { font-family: var(--font-serif); font-weight: 300; font-size: 22px; line-height: 1.72; color: var(--color-text-secondary); margin-bottom: 28px; }
+    .transcript-p.lead { font-size: 23px; color: var(--color-text-primary); }
+    .transcript-blockquote { font-family: var(--font-serif); font-weight: 300; font-style: italic; font-size: clamp(22px, 3vw, 34px); line-height: 1.38; color: var(--color-gold); margin: 54px 0; padding: 0 0 0 28px; border-left: 1px solid rgba(201,146,42,0.5); }
+    .transcript-sign { font-family: var(--font-serif); font-weight: 400; font-size: 21px; line-height: 1.72; color: var(--color-text-primary); margin-top: 48px; }
+    .transcript-sign span { color: var(--color-text-muted); font-style: italic; }
+    .related-section { padding: 60px 48px 120px; max-width: 1280px; margin: 0 auto; }
+    .related-label { font-size: 12px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+    @media(max-width:900px){ .related-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .related-card { display: block; }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1c1507 0%, #0d0d0d 100%); border: 1px solid rgba(201, 146, 42, 0.15); margin-bottom: 18px; border-radius: 12px; }
+    .related-meta { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-serif); font-weight: 500; font-size: 22px; line-height: 1.2; color: var(--color-text-primary); transition: color 0.3s; }
+    .related-card:hover .related-title { color: var(--color-gold); }
+    .ep-subscribe { padding: 100px 48px; max-width: 700px; margin: 0 auto; text-align: center; border-top: 1px solid var(--color-border); }
+    .ep-subscribe h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.12; color: var(--color-text-primary); margin-bottom: 16px; }
+    .ep-subscribe p { font-family: var(--font-serif); font-weight: 300; font-size: 19px; color: var(--color-text-secondary); margin-bottom: 36px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container nav-centered">
+      <nav class="nav-links nav-left">
+        <a href="the-heart.html" class="nav-link">The Heart</a>
+        <a href="addresses.html" class="nav-link active">Addresses</a>
+      </nav>
+      <a href="index.html" class="logo logo-center">
+        <img src="assets/logo-gold.png" alt="The Human Address logo" class="logo-img">
+      </a>
+      <nav class="nav-links nav-right">
+        <a href="speaking.html" class="nav-link">Speaking</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html#subscribe" class="nav-btn">Subscribe</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span class="theme-toggle-sun">☀</span>
+          <span class="theme-toggle-moon">☾</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Episode Hero -->
+  <section class="ep-hero">
+    <a href="addresses.html" class="back-link reveal">← The Library</a>
+    <div class="ep-meta-label reveal" data-delay="0.05">Season 1 · No. 07 · Faith</div>
+    <h1 class="reveal" data-delay="0.12">The Weight of Being Made</h1>
+    <div class="ep-date reveal" data-delay="0.22">Delivered June 14, 2026 · 18 minutes</div>
+  </section>
+
+  <!-- Video Player -->
+  <section class="video-section">
+    <div class="video-wrap reveal">
+      <video id="episode-player" controls preload="metadata" poster="assets/latest_still.jpeg">
+        <source src="assets/episode_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Written Transcript -->
+  <section class="transcript-section">
+    <div class="transcript-label reveal">The Address in Writing</div>
+    <p class="transcript-p lead reveal" data-delay="0.05">My friends — I want to begin not with what we can build, but with what we are. We have become a people fluent in capability and illiterate in meaning. We can extend a life and cannot say what a life is for.</p>
+    <p class="transcript-p reveal" data-delay="0.1">To be made is to be answerable. This is the sentence I want to leave with you tonight. A thing that makes itself owes nothing to anyone. But you and I did not make ourselves. We were intended — thought of before we arrived, named before we could answer. And to be intended is to carry a weight that no achievement can add to and no failure can remove.</p>
+    <blockquote class="transcript-blockquote reveal" data-delay="0.15">We can extend a life and cannot say what a life is for.</blockquote>
+    <p class="transcript-p reveal" data-delay="0.2">In my own continent, the one the world insists on calling young, we have always known something that the optimised world is only beginning to grieve: that a person is not a resource, that a family is the first government, that the dead are not gone and the unborn are not absent. We have known that to be human is to stand in a line of obligation that runs both ways through time.</p>
+    <p class="transcript-p reveal" data-delay="0.25">So I will not ask you tonight to do more. I will ask you to remember more. To remember that you were made, and that the One who made you meant something by it. The recovery of our age will not begin with a better tool. It will begin with a better answer to the oldest question — and the willingness to live as though the answer were true.</p>
+    <p class="transcript-sign reveal" data-delay="0.3">Until next week — sit well, and be reminded of what you are.<br><span>— Hudson</span></p>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section class="ep-subscribe">
+    <h2 class="reveal">Receive the next address as a letter.</h2>
+    <p class="reveal" data-delay="0.08">Free. One letter, the morning each episode airs.</p>
+    <form class="subscribe-form reveal" data-delay="0.14">
+      <input type="email" required placeholder="your@email.com" class="subscribe-input">
+      <button type="submit" class="subscribe-submit">Subscribe</button>
+    </form>
+    <div class="subscribe-note" style="margin-top:14px;">Free. Unsubscribe anytime.</div>
+  </section>
+
+  <!-- Related Addresses -->
+  <section class="related-section">
+    <div class="related-label">Related Addresses</div>
+    <div class="related-grid">
+      <a href="address.html" class="related-card reveal">
+        <div class="related-thumb"></div>
+        <div class="related-meta">No. 06 · Leadership</div>
+        <div class="related-title">The Loneliness of the Podium</div>
+      </a>
+      <a href="address.html" class="related-card reveal" data-delay="0.1">
+        <div class="related-thumb"></div>
+        <div class="related-meta">No. 05 · Family</div>
+        <div class="related-title">The First Government</div>
+      </a>
+      <a href="address.html" class="related-card reveal" data-delay="0.2">
+        <div class="related-thumb"></div>
+        <div class="related-meta">No. 02 · Faith</div>
+        <div class="related-title">On Being Intended</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo-gold.png" alt="The Human Address logo" class="logo-img footer-logo-img">
+        </div>
+        <p class="footer-tagline">What did God mean when He made a human being?</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <div class="footer-links">
+          <a href="the-heart.html" class="footer-link">The Heart</a>
+          <a href="addresses.html" class="footer-link">Addresses</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="speaking.html" class="footer-link">Speaking & Partnership</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="index.html#subscribe" class="footer-link">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 The Human Address. Hosted by Hudson Tumusiime.</div>
+      <div class="footer-motto">One Voice · One Podium · One Truth</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
