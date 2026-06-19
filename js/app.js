@@ -81,34 +81,59 @@ function initRevealAnimations() {
 function initSubscriptionForms() {
   const subscribeForms = document.querySelectorAll('.subscribe-form');
   
+  // FormSubmit AJAX endpoint — delivers subscriber emails to the address inbox
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/hudson.tim.uk@gmail.com';
+
   subscribeForms.forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       const emailInput = form.querySelector('.subscribe-input');
       const submitBtn = form.querySelector('.subscribe-submit');
       const noteEl = form.nextElementSibling; // The .subscribe-note text container
-      
+
       if (!emailInput || !submitBtn) return;
-      
+
       const email = emailInput.value.trim();
       if (!email) return;
 
-      // Disable inputs during submission simulation
+      // Disable inputs during submission
       emailInput.disabled = true;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
-      // Simulate API submission
-      setTimeout(() => {
-        submitBtn.textContent = 'Sent';
-        emailInput.value = '';
-        
-        if (noteEl && noteEl.classList.contains('subscribe-note')) {
-          noteEl.textContent = 'Thank you — the next address will arrive in your inbox.';
-          noteEl.style.color = '#C9922A'; // highlight gold
-        }
-      }, 1000);
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          _subject: 'New subscriber — The Address in Writing',
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+        .then(response => response.json())
+        .then(() => {
+          submitBtn.textContent = 'Sent';
+          emailInput.value = '';
+          if (noteEl && noteEl.classList.contains('subscribe-note')) {
+            noteEl.textContent = 'Thank you — the next address will arrive in your inbox.';
+            noteEl.style.color = '#C9922A'; // highlight gold
+          }
+        })
+        .catch(() => {
+          // Re-enable so the visitor can retry
+          emailInput.disabled = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Subscribe';
+          if (noteEl && noteEl.classList.contains('subscribe-note')) {
+            noteEl.textContent = 'Something went wrong — please try again.';
+            noteEl.style.color = '';
+          }
+        });
     });
   });
 }
