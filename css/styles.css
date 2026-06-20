@@ -411,6 +411,20 @@ header {
 }
 
 /* Manifesto Section */
+.manifesto-section {
+  background-color: #8B5E3C; /* Earth Amber */
+  padding: 64px 24px;
+}
+
+.manifesto-section .eyebrow {
+  color: var(--color-candlelight);
+}
+
+.manifesto-section .vertical-line {
+  margin-top: 40px;
+  height: 60px;
+}
+
 .manifesto-container {
   max-width: 1200px;
   margin: 0 auto;
