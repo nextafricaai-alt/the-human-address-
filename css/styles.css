@@ -691,9 +691,9 @@ video.latest-img {
 
 /* Quote Section */
 .quote-section {
-  background-color: #8B5E3C; /* Earth Amber */
-  border-top: 1px solid rgba(10, 10, 10, 0.18);
-  border-bottom: 1px solid rgba(10, 10, 10, 0.18);
+  background-color: #3B2314; /* Archive Brown */
+  border-top: 1px solid rgba(201, 146, 42, 0.15);
+  border-bottom: 1px solid rgba(201, 146, 42, 0.15);
   text-align: center;
 }
 
@@ -715,7 +715,7 @@ video.latest-img {
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-candlelight);
+  color: var(--color-gold);
   margin-top: 32px;
 }
 
