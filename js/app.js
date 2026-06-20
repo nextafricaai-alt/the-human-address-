@@ -3,37 +3,13 @@
    Controls scroll reveal animations, UI states, and theme toggling.
    ------------------------------------------------------------- */
 
-// Immediately set theme from localStorage to avoid Flash of Unstyled Content (FOUC)
-(function() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-  }
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Theme Toggle
-  initThemeToggle();
-
   // Initialize Reveal Animations
   initRevealAnimations();
 
   // Initialize Subscription Forms
   initSubscriptionForms();
 });
-
-/**
- * Handles switching between light and dark themes
- */
-function initThemeToggle() {
-  const toggleBtn = document.getElementById('theme-toggle');
-  if (!toggleBtn) return;
-
-  toggleBtn.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-theme');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-}
 
 /**
  * Reveal elements smoothly on scroll using Intersection Observer
