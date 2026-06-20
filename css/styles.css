@@ -691,7 +691,12 @@ video.latest-img {
 
 /* Quote Section */
 .quote-section {
-  background-color: #3B2314; /* Archive Brown */
+  background-color: #3B2314; /* Archive Brown — fallback */
+  background-image:
+    linear-gradient(rgba(30, 18, 9, 0.80), rgba(10, 8, 5, 0.90)),
+    url("../assets/hero_background.png");
+  background-size: cover;
+  background-position: center;
   border-top: 1px solid rgba(201, 146, 42, 0.15);
   border-bottom: 1px solid rgba(201, 146, 42, 0.15);
   text-align: center;
@@ -717,6 +722,41 @@ video.latest-img {
   text-transform: uppercase;
   color: var(--color-gold);
   margin-top: 32px;
+}
+
+/* ============================================================
+   CINEMATIC ATMOSPHERE — candlelight glow, film grain, vignette
+   ============================================================ */
+
+/* Global edge vignette (fixed, non-interactive) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 45%, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* Global film grain (fixed, non-interactive) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9991;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Candlelight glow behind the pillar cards */
+.pillars-section {
+  background: radial-gradient(ellipse 72% 60% at 50% 20%, rgba(232, 200, 122, 0.07), transparent 70%);
+}
+
+/* Candlelight glow behind the manifesto statement */
+.manifesto-section {
+  background: radial-gradient(ellipse 60% 75% at 50% 50%, rgba(232, 200, 122, 0.05), transparent 72%);
 }
 
 /* Subscription Form */
