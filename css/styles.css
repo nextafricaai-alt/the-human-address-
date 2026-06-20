@@ -412,12 +412,7 @@ header {
 
 /* Manifesto Section */
 .manifesto-section {
-  background-color: #8B5E3C; /* Earth Amber */
   padding: 64px 24px;
-}
-
-.manifesto-section .eyebrow {
-  color: var(--color-candlelight);
 }
 
 .manifesto-section .vertical-line {
@@ -696,9 +691,9 @@ video.latest-img {
 
 /* Quote Section */
 .quote-section {
-  background-color: #0E0E0E;
-  border-top: 1px solid rgba(201, 146, 42, 0.12);
-  border-bottom: 1px solid rgba(201, 146, 42, 0.12);
+  background-color: #8B5E3C; /* Earth Amber */
+  border-top: 1px solid rgba(10, 10, 10, 0.18);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.18);
   text-align: center;
 }
 
@@ -720,7 +715,7 @@ video.latest-img {
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-candlelight);
   margin-top: 32px;
 }
 
