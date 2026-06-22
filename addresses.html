@@ -205,6 +205,7 @@
   <script src="js/app.js?v=19"></script>
   <script>
     const ALL_EPISODES = [
+      { id:'addr-0', n:'09', theme:'Family', videoId:'xzgYVgi_cTI', title:'The Future Is Built at Home', excerpt:'An address to fathers — the future of a people is built first in the home, by the ones who stay.' },
       { id:'addr-1', n:'07', theme:'Faith',       title:'The Weight of Being Made',        excerpt:'To be made is to be answerable — and answerability is not a burden but a belonging.' },
       { id:'addr-2', n:'06', theme:'Leadership',  title:'The Loneliness of the Podium',    excerpt:'Why the single accountable voice is the most endangered, and most needed, thing we have.' },
       { id:'addr-3', n:'05', theme:'Family',      title:'The First Government',             excerpt:'Before the state, before the church, before the firm — the household teaches us what we are.' },
@@ -233,9 +234,15 @@
         return;
       }
       empty.style.display = 'none';
-      grid.innerHTML = filtered.map(e => `
-        <a href="address.html" class="episode-card">
-          <div class="episode-thumb"><div class="episode-thumb-overlay"></div></div>
+      grid.innerHTML = filtered.map(e => {
+        const href = e.videoId ? 'https://www.youtube.com/watch?v=' + e.videoId : 'address.html';
+        const target = e.videoId ? ' target="_blank" rel="noopener"' : '';
+        const thumbStyle = e.videoId
+          ? ' style="background-image:url(\'https://img.youtube.com/vi/' + e.videoId + '/hqdefault.jpg\');background-size:cover;background-position:center;"'
+          : '';
+        return `
+        <a href="${href}"${target} class="episode-card">
+          <div class="episode-thumb"${thumbStyle}><div class="episode-thumb-overlay"></div></div>
           <div class="episode-meta">
             <span class="ep-season">Season 1 · No. ${e.n}</span>
             <span class="ep-dot"></span>
@@ -243,8 +250,8 @@
           </div>
           <div class="ep-title">${e.title}</div>
           <p class="ep-excerpt">${e.excerpt}</p>
-        </a>
-      `).join('');
+        </a>`;
+      }).join('');
     }
 
     // Theme filters
