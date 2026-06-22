@@ -299,6 +299,17 @@ header {
   background-color: #0d0d0d;
 }
 
+/* Hero still image — fades back in after the intro clip ends */
+.hero-still {
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 1.2s ease;
+}
+
+.hero-still.shown {
+  opacity: 1;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;

@@ -25,7 +25,11 @@ function initHeroIntro() {
   if (!content) return;
 
   const video = hero.querySelector('video.hero-bg');
-  const reveal = () => content.classList.add('entered');
+  const still = hero.querySelector('.hero-still');
+  const reveal = () => {
+    content.classList.add('entered');
+    if (still) still.classList.add('shown');
+  };
 
   if (!video) { reveal(); return; }
 
