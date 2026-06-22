@@ -1,3 +1,4 @@
 *.mp4
+!assets/hero-clip.mp4
 *.zip
 .DS_Store
