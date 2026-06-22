@@ -412,7 +412,7 @@ header {
 
 /* Manifesto Section */
 .manifesto-section {
-  padding: 72px 24px 28px;
+  padding: 64px 24px;
 }
 
 .manifesto-section .vertical-line {
@@ -523,8 +523,8 @@ header {
 
 /* Pillars — cinematic icon cards (placed after hero) */
 .pillars-section {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .pillars-grid {
@@ -712,6 +712,24 @@ video.latest-img {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+/* Latest address — full-bleed, edge-to-edge band */
+.latest-section {
+  background: rgba(22, 22, 22, 0.6);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 64px 0;
+}
+
+.latest-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 640px) {
+  .latest-inner { padding: 0 24px; }
 }
 
 /* Quote Section */
