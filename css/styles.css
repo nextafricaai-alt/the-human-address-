@@ -204,7 +204,6 @@ header {
   width: auto;
   display: block;
   object-fit: contain;
-  animation: logo-slow-rotate 30s linear infinite;
   transform-origin: center;
 }
 
