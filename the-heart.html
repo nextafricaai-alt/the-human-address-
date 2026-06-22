@@ -7,7 +7,8 @@
   <meta name="description" content="Before we ask what a human can do, we must ask what a human is. The vision, mission, and heart behind The Human Address.">
   <link rel="stylesheet" href="css/styles.css?v=29">
   <style>
-    .heart-hero { padding: 200px 48px 100px; max-width: 900px; margin: 0 auto; background-image: linear-gradient(rgba(10,10,10,0.72), rgba(10,10,10,0.84)), url("assets/flag.jpg"); background-size: cover; background-position: center; border-radius: 16px; border: 1px solid var(--color-border-gold); }
+    .heart-hero { padding: 200px 48px 100px; background-image: linear-gradient(rgba(10,10,10,0.72), rgba(10,10,10,0.84)), url("assets/flag.jpg"); background-size: cover; background-position: center; }
+    .heart-hero-inner { max-width: 900px; margin: 0 auto; }
     .heart-hero h1 { font-family: var(--font-serif); font-weight: 300; font-size: clamp(36px, 5.5vw, 72px); line-height: 1.08; color: var(--color-text-primary); margin-bottom: 40px; }
     .heart-hero h1 em { color: var(--color-gold); font-style: normal; }
     .heart-divider { width: 1px; height: 100px; background: linear-gradient(180deg, var(--color-gold), transparent); margin: 0 0 0 0; }
@@ -137,9 +138,11 @@
 
   <!-- Hero -->
   <section class="heart-hero">
-    <div class="eyebrow reveal">The Vision</div>
-    <h1 class="reveal" data-delay="0.15">Before we ask what a human can do, we must ask what a human <em>is</em>.</h1>
-    <div class="heart-divider reveal" data-delay="0.3"></div>
+    <div class="heart-hero-inner">
+      <div class="eyebrow reveal">The Vision</div>
+      <h1 class="reveal" data-delay="0.15">Before we ask what a human can do, we must ask what a human <em>is</em>.</h1>
+      <div class="heart-divider reveal" data-delay="0.3"></div>
+    </div>
   </section>
 
   <!-- Three Pillars -->
