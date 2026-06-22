@@ -310,6 +310,9 @@ header {
 }
 
 @media (max-width: 900px) {
+  .nav-links.nav-left,
+  .nav-links.nav-right { display: none; }
+
   .nav-container { justify-content: center; }
 
   .nav-toggle {
