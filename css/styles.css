@@ -442,12 +442,23 @@ header {
   }
 }
 
-/* Manifesto panel — gold world map background */
+/* Map backdrop behind pillars + manifesto */
+.map-backdrop {
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.74), rgba(10, 10, 10, 0.82)),
+    url("../assets/world-map.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Manifesto panel — flag background */
 .manifesto-container.section-panel {
   background-color: #0d0d0d;
   background-image:
-    linear-gradient(rgba(10, 10, 10, 0.60), rgba(10, 10, 10, 0.74)),
-    url("../assets/world-map.jpg");
+    linear-gradient(rgba(10, 10, 10, 0.58), rgba(10, 10, 10, 0.72)),
+    url("../assets/flag.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
