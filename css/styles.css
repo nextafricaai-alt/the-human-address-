@@ -865,12 +865,6 @@ video.latest-img {
 
 /* Quote Section */
 .quote-section {
-  background-color: #3B2314; /* Archive Brown — fallback */
-  background-image:
-    linear-gradient(rgba(30, 18, 9, 0.80), rgba(10, 8, 5, 0.90)),
-    url("../assets/wall.jpg");
-  background-size: cover;
-  background-position: center;
   border-top: 1px solid rgba(201, 146, 42, 0.15);
   border-bottom: 1px solid rgba(201, 146, 42, 0.15);
   text-align: center;
