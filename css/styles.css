@@ -426,8 +426,8 @@ header {
 .hero-title {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: clamp(50px, 7.8vw, 116px);
-  line-height: 1.02;
+  font-size: clamp(38px, 5.6vw, 82px);
+  line-height: 1.04;
   letter-spacing: -0.015em;
   -webkit-text-stroke: 0.4px currentColor;
   color: var(--color-text-primary);
