@@ -767,6 +767,19 @@ video.latest-img {
   padding: 0 48px;
 }
 
+.latest-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.latest-heading {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.12;
+  color: var(--color-text-primary);
+}
+
 @media (max-width: 640px) {
   .latest-inner { padding: 0 24px; }
 }
