@@ -442,6 +442,17 @@ header {
   }
 }
 
+/* Manifesto panel — gold world map background */
+.manifesto-container.section-panel {
+  background-color: #0d0d0d;
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.60), rgba(10, 10, 10, 0.74)),
+    url("../assets/world-map.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .manifesto-text {
   font-family: var(--font-serif);
   font-weight: 500;
