@@ -4,12 +4,42 @@
    ------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Hero intro — text appears after the clip ends
+  initHeroIntro();
+
   // Initialize Reveal Animations
   initRevealAnimations();
 
   // Initialize Subscription Forms
   initSubscriptionForms();
 });
+
+/**
+ * Hero intro — keep the hero text hidden while the 19s clip plays,
+ * then reveal it when the video ends (freezing on its last frame).
+ * Falls back to revealing promptly if autoplay is blocked.
+ */
+function initHeroIntro() {
+  const hero = document.querySelector('.hero');
+  const content = hero ? hero.querySelector('.hero-content') : null;
+  if (!content) return;
+
+  const video = hero.querySelector('video.hero-bg');
+  const reveal = () => content.classList.add('entered');
+
+  if (!video) { reveal(); return; }
+
+  let started = false;
+  video.addEventListener('play', () => { started = true; });
+  video.addEventListener('ended', reveal);
+  video.addEventListener('error', reveal);
+
+  // If autoplay is blocked, the poster acts as the still — reveal promptly
+  setTimeout(() => { if (!started) reveal(); }, 1800);
+
+  // Absolute safety net
+  setTimeout(reveal, 20500);
+}
 
 /**
  * Reveal elements smoothly on scroll using Intersection Observer
