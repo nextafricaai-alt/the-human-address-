@@ -835,6 +835,44 @@ video.latest-img {
   padding: 0 48px;
 }
 
+/* About section below latest address */
+.about-section {
+  background: rgba(16, 16, 16, 0.88);
+  border-top: 1px solid rgba(240, 237, 230, 0.08);
+  border-bottom: 1px solid rgba(240, 237, 230, 0.08);
+}
+
+.about-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 48px;
+}
+
+.about-heading {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.about-copy {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .about-inner {
+    padding: 0 24px;
+  }
+}
+
 .latest-header {
   text-align: center;
   margin-bottom: 56px;
