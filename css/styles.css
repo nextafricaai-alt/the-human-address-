@@ -823,9 +823,7 @@ video.latest-img {
 
 /* Latest address — full-bleed, edge-to-edge band */
 .latest-section {
-  background: rgba(22, 22, 22, 0.6);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  background: transparent;
   padding: 64px 0;
 }
 
