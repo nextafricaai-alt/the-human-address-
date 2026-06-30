@@ -730,7 +730,7 @@ header {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  background-color: transparent;
+  background-color: #000000;
   border: 1px solid var(--color-border-gold);
   border-radius: 12px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(232, 200, 122, 0.06);
