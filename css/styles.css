@@ -1486,21 +1486,23 @@ body.light-theme .back-link:hover {
   color: #C8A454;
 }
 
-/* -- Split Card Layout -- */
-.split-card-grid {
+/* -- Full Bleed Split Section -- */
+.about-fullbleed {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 1fr 1fr;
   align-items: stretch;
+  background: #0E0E0E;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   width: 100%;
-  height: 100%;
 }
-.split-card-image {
+.about-fullbleed-image {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-.split-card-image img {
+.about-fullbleed-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1510,25 +1512,28 @@ body.light-theme .back-link:hover {
   top: 0;
   left: 0;
 }
-.split-card-content {
-  padding: 64px 48px;
+.about-fullbleed-content {
+  padding: 100px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  max-width: 680px;
 }
-@media (max-width: 850px) {
-  .split-card-grid {
+@media (max-width: 900px) {
+  .about-fullbleed {
     grid-template-columns: 1fr;
   }
-  .split-card-image {
-    aspect-ratio: 4/5;
+  .about-fullbleed-image {
+    aspect-ratio: 4/3;
+    height: 400px;
   }
-  .split-card-image img {
+  .about-fullbleed-image img {
     position: relative;
   }
-  .split-card-content {
-    padding: 48px 24px;
+  .about-fullbleed-content {
+    padding: 60px 24px;
+    max-width: 100%;
     text-align: center;
   }
 }
