@@ -8,7 +8,7 @@
   <meta name="description" content="What did God mean when He made a human being? A cinematic thought-leadership platform on faith, leadership, family, technology, and the future. Hosted by Hudson Tumusiime.">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=35">
+  <link rel="stylesheet" href="css/styles.css?v=36">
 </head>
 <body>
 
@@ -134,49 +134,74 @@
   </section>
   </div>
 
-  <section class="latest-section map-backdrop">
+  <!-- Video Slider Section -->
+  <section class="carousel-section map-backdrop">
     <div class="latest-inner">
       <div class="latest-header reveal" style="text-align: center; margin-bottom: 40px;">
         <h2 class="latest-heading">Don't miss the latest address.</h2>
       </div>
     </div>
 
-    <!-- Bordered Box Container -->
-    <div class="reveal" style="max-width: 1000px; margin: 0 auto; padding: 48px 24px; border-radius: 16px; border: 1px solid rgba(201,146,42,0.3); background: rgba(14, 14, 14, 0.7); backdrop-filter: blur(12px); margin-bottom: 24px;">
-      
-      <!-- Top Text -->
-      <div style="text-align: center; margin-bottom: 32px;">
-        <div class="eyebrow" style="margin-bottom: 16px;">Season 1 &nbsp;·&nbsp; Now Airing</div>
-        <h2 class="latest-title" style="margin-bottom: 0; font-size: clamp(32px, 4vw, 48px);">Lord, What About Me?</h2>
-      </div>
-
-      <!-- Centered Video -->
-      <div style="width: 100%; margin: 0 auto;">
-        <div class="latest-media">
-          <iframe
-            class="latest-img"
-            src="https://www.youtube.com/embed/gr_9mGvQzyc?rel=0"
-            title="Lord, What About Me? To the Woman Who Is Tired of Waiting | The Waiting Woman"
-            style="width:100%; height:100%; border:0;"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-container" id="carousel-container">
+        <!-- Slide 0: Episode 11 -->
+        <div class="carousel-slide" data-index="0">
+          <div class="carousel-media" id="media-0">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/lohDmrW5MUA/maxresdefault.jpg');" onclick="playVideo(0, 'lohDmrW5MUA')">
+              <div class="carousel-play-btn">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Bottom Text & Buttons -->
-      <div style="margin-top: 40px;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-          <p class="latest-excerpt" style="margin: 0 auto 32px; font-size: 20px;">To the Woman Who Is Tired of Waiting | The Waiting Woman</p>
-          <div class="latest-actions" style="justify-content: center;">
-            <a href="address.html" class="btn-primary">Watch & Read</a>
-            <a href="addresses.html" class="btn-text">All Addresses</a>
+        <!-- Slide 1: Episode 10 (Active by default) -->
+        <div class="carousel-slide" data-index="1">
+          <div class="carousel-media" id="media-1">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/gr_9mGvQzyc/maxresdefault.jpg');" onclick="playVideo(1, 'gr_9mGvQzyc')">
+              <div class="carousel-play-btn">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: Episode 9 -->
+        <div class="carousel-slide" data-index="2">
+          <div class="carousel-media" id="media-2">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/xzgYVgi_cTI/maxresdefault.jpg');" onclick="playVideo(2, 'xzgYVgi_cTI')">
+              <div class="carousel-play-btn">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Active Slide Details -->
+      <div class="carousel-details">
+        <div class="eyebrow" id="active-eyebrow" style="margin-bottom: 12px; color: var(--color-gold);">Season 1 · No. 10</div>
+        <h2 class="latest-title" id="active-title" style="margin-bottom: 16px; font-size: clamp(28px, 3.5vw, 44px); font-family: var(--font-serif); font-weight: 300;">Lord, What About Me?</h2>
+        <p class="latest-excerpt" id="active-excerpt" style="max-width: 800px; margin: 0 auto 32px; font-size: 18px; line-height: 1.6; color: var(--color-text-secondary);">To the Woman Who Is Tired of Waiting | The Waiting Woman</p>
+        
+        <div class="latest-actions" style="justify-content: center; gap: 20px; display: flex; align-items: center;">
+          <a href="address.html" id="active-read-link" class="btn-primary">Watch & Read</a>
+          <a href="addresses.html" class="btn-text">All Addresses</a>
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="carousel-nav">
+          <button class="carousel-arrow" onclick="slidePrev()" aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <div class="carousel-dots" id="carousel-dots">
+            <span class="carousel-dot" onclick="slideTo(0)"></span>
+            <span class="carousel-dot" onclick="slideTo(1)"></span>
+            <span class="carousel-dot" onclick="slideTo(2)"></span>
+          </div>
+          <button class="carousel-arrow" onclick="slideNext()" aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -264,5 +289,134 @@
 
   <!-- Main JavaScript File -->
   <script src="js/app.js?v=19"></script>
+  
+  <!-- Centered Video Slider Logic -->
+  <script>
+    const SLIDE_DATA = [
+      {
+        index: 0,
+        season: 'Season 1 · No. 11',
+        title: 'The future of Africa is human',
+        excerpt: 'The question before any strategy: not what Africa can build, but who we are while we build it.',
+        videoId: 'lohDmrW5MUA',
+        readUrl: 'address.html?id=addr-11'
+      },
+      {
+        index: 1,
+        season: 'Season 1 · No. 10',
+        title: 'Lord, What About Me?',
+        excerpt: 'To the Woman Who Is Tired of Waiting | The Waiting Woman',
+        videoId: 'gr_9mGvQzyc',
+        readUrl: 'address.html?id=addr-10'
+      },
+      {
+        index: 2,
+        season: 'Season 1 · No. 09',
+        title: 'The Future Is Built at Home',
+        excerpt: 'An address to fathers — the future of a people is built first in the home, by the ones who stay.',
+        videoId: 'xzgYVgi_cTI',
+        readUrl: 'address.html?id=addr-0'
+      }
+    ];
+
+    let currentSlide = 1; // Default to center (Lord, What About Me?)
+
+    function updateSlider() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.carousel-dot');
+      
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev', 'next');
+        
+        // Stop video if this slide was previously playing
+        if (i !== currentSlide) {
+          resetVideo(i);
+        }
+        
+        if (i === currentSlide) {
+          slide.classList.add('active');
+        } else if (i === (currentSlide - 1 + SLIDE_DATA.length) % SLIDE_DATA.length) {
+          slide.classList.add('prev');
+        } else {
+          slide.classList.add('next');
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+
+      // Update details text below
+      const data = SLIDE_DATA[currentSlide];
+      document.getElementById('active-eyebrow').innerText = data.season;
+      document.getElementById('active-title').innerText = data.title;
+      document.getElementById('active-excerpt').innerText = data.excerpt;
+      document.getElementById('active-read-link').href = data.readUrl;
+    }
+
+    function slidePrev() {
+      currentSlide = (currentSlide - 1 + SLIDE_DATA.length) % SLIDE_DATA.length;
+      updateSlider();
+    }
+
+    function slideNext() {
+      currentSlide = (currentSlide + 1) % SLIDE_DATA.length;
+      updateSlider();
+    }
+
+    function slideTo(index) {
+      currentSlide = index;
+      updateSlider();
+    }
+
+    function playVideo(index, videoId) {
+      // Only play if it's the active slide
+      if (index !== currentSlide) {
+        slideTo(index);
+        return;
+      }
+      
+      const mediaContainer = document.getElementById(`media-${index}`);
+      mediaContainer.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+          title="${SLIDE_DATA[index].title}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      `;
+    }
+
+    function resetVideo(index) {
+      const mediaContainer = document.getElementById(`media-${index}`);
+      const data = SLIDE_DATA[index];
+      // Check if it's currently an iframe
+      if (mediaContainer.querySelector('iframe')) {
+        mediaContainer.innerHTML = `
+          <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/${data.videoId}/maxresdefault.jpg');" onclick="playVideo(${index}, '${data.videoId}')">
+            <div class="carousel-play-btn">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Setup click handlers for blurry side slides
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.carousel-slide');
+      slides.forEach((slide, i) => {
+        slide.addEventListener('click', (e) => {
+          if (i !== currentSlide) {
+            e.preventDefault();
+            e.stopPropagation();
+            slideTo(i);
+          }
+        });
+      });
+      
+      updateSlider();
+    });
+  </script>
 </body>
 </html>
