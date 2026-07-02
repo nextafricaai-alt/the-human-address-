@@ -1485,3 +1485,39 @@ body.light-theme .back-link {
 body.light-theme .back-link:hover {
   color: #C8A454;
 }
+
+/* -- About Grid Layout -- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
+}
+.about-portrait {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border: 1px solid rgba(201, 146, 42, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+}
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+@media (max-width: 800px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .about-portrait {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
