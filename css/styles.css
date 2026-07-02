@@ -540,12 +540,6 @@ header {
 /* Map backdrop behind pillars + manifesto */
 .map-backdrop {
   background-color: var(--color-bg);
-  background-image:
-    linear-gradient(rgba(10, 10, 10, 0.74), rgba(10, 10, 10, 0.82)),
-    url("../assets/world-map.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 
