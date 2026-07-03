@@ -8,7 +8,7 @@
   <meta name="description" content="What did God mean when He made a human being? A cinematic thought-leadership platform on faith, leadership, family, technology, and the future. Hosted by Hudson Tumusiime.">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=36">
+  <link rel="stylesheet" href="css/styles.css?v=37">
 </head>
 <body>
 
@@ -308,6 +308,52 @@
     </div>
   </section>
 
+  <!-- The Human Condition Section -->
+  <section class="condition-section section-padding">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 64px;">
+        <div class="eyebrow" style="margin-bottom: 16px;">The Human Condition</div>
+        <h2 class="section-title" style="font-family: var(--font-serif); font-size: clamp(32px, 4vw, 48px); font-weight: 300; margin-bottom: 16px; color: var(--color-text-primary);">The Human Condition</h2>
+        <p style="color: var(--color-text-muted); font-size: 18px; font-family: var(--font-serif); font-style: italic;">An interactive wheel of core themes.</p>
+      </div>
+
+      <div class="condition-grid reveal">
+        <!-- Left: Interactive Wheel -->
+        <div class="wheel-wrapper">
+          <div class="wheel-hub">
+            <div style="font-size: 9px; letter-spacing: 0.2em; color: var(--color-text-muted); margin-bottom: 4px;">Explore</div>
+            <div style="font-weight: 400; font-size: 12px; color: var(--color-gold);">Themes</div>
+          </div>
+          <div class="condition-wheel">
+            <div class="wheel-item active" style="--angle: 0deg;" onclick="selectTheme('purpose')" data-theme="purpose">Purpose</div>
+            <div class="wheel-item" style="--angle: 30deg;" onclick="selectTheme('loneliness')" data-theme="loneliness">Loneliness</div>
+            <div class="wheel-item" style="--angle: 60deg;" onclick="selectTheme('waiting')" data-theme="waiting">Waiting</div>
+            <div class="wheel-item" style="--angle: 90deg;" onclick="selectTheme('friendship')" data-theme="friendship">Friendship</div>
+            <div class="wheel-item" style="--angle: 120deg;" onclick="selectTheme('leadership')" data-theme="leadership">Leadership</div>
+            <div class="wheel-item" style="--angle: 150deg;" onclick="selectTheme('grief')" data-theme="grief">Grief</div>
+            <div class="wheel-item" style="--angle: 180deg;" onclick="selectTheme('identity')" data-theme="identity">Identity</div>
+            <div class="wheel-item" style="--angle: 210deg;" onclick="selectTheme('work')" data-theme="work">Work</div>
+            <div class="wheel-item" style="--angle: 240deg;" onclick="selectTheme('faith')" data-theme="faith">Faith</div>
+            <div class="wheel-item" style="--angle: 270deg;" onclick="selectTheme('technology')" data-theme="technology">Technology</div>
+            <div class="wheel-item" style="--angle: 300deg;" onclick="selectTheme('africa')" data-theme="africa">Africa</div>
+            <div class="wheel-item" style="--angle: 330deg;" onclick="selectTheme('civilization')" data-theme="civilization">Civilization</div>
+          </div>
+        </div>
+
+        <!-- Right: Theme Details Display -->
+        <div class="theme-details-panel">
+          <div class="theme-details-content" id="theme-details">
+            <div class="eyebrow" id="theme-eyebrow" style="color: var(--color-gold); margin-bottom: 16px;">Core Theme</div>
+            <h3 class="theme-title" id="theme-title" style="font-family: var(--font-serif); font-size: clamp(36px, 4.5vw, 56px); font-weight: 300; margin-bottom: 20px; line-height: 1.1; color: var(--color-text-primary);">Purpose</h3>
+            <p class="theme-tagline" id="theme-tagline" style="font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--color-gold); margin-bottom: 24px;">The quest for why we are here</p>
+            <p class="theme-desc" id="theme-desc" style="font-size: 18px; line-height: 1.7; color: var(--color-text-secondary); margin-bottom: 40px; min-height: 100px;">To explore purpose is to ask not what we can achieve, but what we were intended to be. It is the recovery of intent in an age of accidents.</p>
+            <a href="addresses.html?q=purpose" id="theme-btn" class="btn-primary" style="display: inline-flex;">View Addresses</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section class="section-padding container">
     <div class="manifesto-card reveal" style="max-width: 1000px; margin: 0 auto; padding: 0; border-radius: 12px; background: var(--color-card-bg); border: 1px solid var(--color-border); position: relative; overflow: hidden;">
@@ -520,6 +566,105 @@
       
       updateSlider();
     });
+
+    // --- The Human Condition Wheel Controller ---
+    const CONDITION_DATA = {
+      purpose: {
+        title: "Purpose",
+        tagline: "The quest for why we are here",
+        desc: "To explore purpose is to ask not what we can achieve, but what we were intended to be. It is the recovery of intent in an age of accidents.",
+        query: "purpose"
+      },
+      loneliness: {
+        title: "Loneliness",
+        tagline: "The quiet spaces of the soul",
+        desc: "Loneliness is not the absence of people; it is the presence of an unanswered question. It is the silent invitation to look deeper.",
+        query: "loneliness"
+      },
+      waiting: {
+        title: "Waiting",
+        tagline: "The threshold of becoming",
+        desc: "Waiting is not wasted time; it is the boundary where character is forged. It teaches us that the best things are received, not seized.",
+        query: "waiting"
+      },
+      friendship: {
+        title: "Friendship",
+        tagline: "Belonging and shared sight",
+        desc: "True friendship is not mere companionship, but a shared gaze toward the same truth. It is the quiet validation that we do not walk alone.",
+        query: "friendship"
+      },
+      leadership: {
+        title: "Leadership",
+        tagline: "The weight of the single accountable voice",
+        desc: "Leadership is the willingness to stand at the podium when the room is silent. It is the burden of responsibility, borne in service of the many.",
+        query: "leadership"
+      },
+      grief: {
+        title: "Grief",
+        tagline: "Walking through the valley of loss",
+        desc: "Grief is the honor we pay to what we loved. It is the process of adjusting to an empty space, and finding that love does not expire with breath.",
+        query: "grief"
+      },
+      identity: {
+        title: "Identity",
+        tagline: "Words for the things we carry",
+        desc: "Who are we when the titles and roles are stripped away? Finding the words for what we have always carried is the beginning of healing.",
+        query: "identity"
+      },
+      work: {
+        title: "Work",
+        tagline: "The dignity of the maker",
+        desc: "Work is the outward expression of our inner design. It is the collaborative act of subduing chaos and bringing order to the raw materials of creation.",
+        query: "work"
+      },
+      faith: {
+        title: "Faith",
+        tagline: "Belonging to what is intended",
+        desc: "Faith is the unfashionable belief that we are not accidents of matter. It is the anchorage of the soul in a reality larger than our doubts.",
+        query: "faith"
+      },
+      technology: {
+        title: "Technology",
+        tagline: "Keeping the human before the tool",
+        desc: "When we let the tool define the user, we forget the maker. True technology serves the human condition; it does not replace it.",
+        query: "technology"
+      },
+      africa: {
+        title: "Africa",
+        tagline: "The old truths of the young continent",
+        desc: "Africa has something ancient and necessary to tell the world about community, endurance, and what it means to live together.",
+        query: "africa"
+      },
+      civilization: {
+        title: "Civilization",
+        tagline: "The houses we build together",
+        desc: "A civilization is measured by the quality of its relationships and the safety of its households. It is the grand collective home of humanity.",
+        query: "civilization"
+      }
+    };
+
+    function selectTheme(themeId) {
+      const data = CONDITION_DATA[themeId];
+      if (!data) return;
+
+      // Highlight active item in wheel
+      document.querySelectorAll('.wheel-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.theme === themeId);
+      });
+
+      // Fade out details, swap text, fade in
+      const panelContent = document.getElementById('theme-details');
+      panelContent.classList.add('fade-out');
+
+      setTimeout(() => {
+        document.getElementById('theme-title').innerText = data.title;
+        document.getElementById('theme-tagline').innerText = data.tagline;
+        document.getElementById('theme-desc').innerText = data.desc;
+        document.getElementById('theme-btn').href = `addresses.html?q=${data.query}`;
+        
+        panelContent.classList.remove('fade-out');
+      }, 400);
+    }
   </script>
 </body>
 </html>
