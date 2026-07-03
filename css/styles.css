@@ -422,10 +422,15 @@ header {
   }
 }
 
+.hero-content .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.4em;
+}
+
 .hero-title {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: clamp(38px, 5.6vw, 82px);
+  font-size: clamp(44px, 6.4vw, 92px);
   line-height: 1.04;
   letter-spacing: -0.015em;
   -webkit-text-stroke: 0.4px currentColor;
@@ -443,8 +448,8 @@ header {
 .hero-desc {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: 1.5;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.55;
   color: var(--color-text-secondary);
   margin-bottom: 40px;
 }
