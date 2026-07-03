@@ -1714,24 +1714,33 @@ body.light-theme .back-link:hover {
 }
 .moments-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 .moment-card {
   position: relative;
-  height: 380px;
+  height: 320px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(240, 237, 230, 0.05);
   background: #111;
   display: flex;
   align-items: flex-end;
-  padding: 32px;
+  padding: 24px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.moment-card:nth-child(-n+5) {
+  grid-column: span 2;
+}
+.moment-card:nth-child(6) {
+  grid-column: 2 / span 2;
+}
+.moment-card:nth-child(n+7) {
+  grid-column: span 2;
 }
 .moment-bg {
   position: absolute;
@@ -1794,20 +1803,28 @@ body.light-theme .back-link:hover {
   opacity: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .moments-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-@media (max-width: 600px) {
-  .moments-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   .moment-card {
-    height: 320px;
-    padding: 24px;
+    height: 340px;
+    grid-column: auto !important;
+  }
+}
+@media (max-width: 768px) {
+  .moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .moments-grid {
+    grid-template-columns: 1fr;
+  }
+  .moment-card {
+    height: 300px;
+    padding: 20px;
   }
 }
 
