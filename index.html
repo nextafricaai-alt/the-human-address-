@@ -8,7 +8,7 @@
   <meta name="description" content="What did God mean when He made a human being? A cinematic thought-leadership platform on faith, leadership, family, technology, and the future. Hosted by Hudson Tumusiime.">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=37">
+  <link rel="stylesheet" href="css/styles.css?v=38">
 </head>
 <body>
 
@@ -314,36 +314,30 @@
       <div class="reveal" style="text-align: center; margin-bottom: 64px;">
         <div class="eyebrow" style="margin-bottom: 16px;">The Human Condition</div>
         <h2 class="section-title" style="font-family: var(--font-serif); font-size: clamp(32px, 4vw, 48px); font-weight: 300; margin-bottom: 16px; color: var(--color-text-primary);">The Human Condition</h2>
-        <p style="color: var(--color-text-muted); font-size: 18px; font-family: var(--font-serif); font-style: italic;">An interactive wheel of core themes.</p>
+        <p style="color: var(--color-text-muted); font-size: 18px; font-family: var(--font-serif); font-style: italic;">Explore key topics on what it means to be human.</p>
       </div>
 
       <div class="condition-grid reveal">
-        <!-- Left: Interactive Wheel -->
-        <div class="wheel-wrapper">
-          <div class="wheel-hub">
-            <div style="font-size: 9px; letter-spacing: 0.2em; color: var(--color-text-muted); margin-bottom: 4px;">Explore</div>
-            <div style="font-weight: 400; font-size: 12px; color: var(--color-gold);">Themes</div>
-          </div>
-          <div class="condition-wheel">
-            <div class="wheel-item active" style="--angle: 0deg;" onclick="selectTheme('purpose')" data-theme="purpose">Purpose</div>
-            <div class="wheel-item" style="--angle: 30deg;" onclick="selectTheme('loneliness')" data-theme="loneliness">Loneliness</div>
-            <div class="wheel-item" style="--angle: 60deg;" onclick="selectTheme('waiting')" data-theme="waiting">Waiting</div>
-            <div class="wheel-item" style="--angle: 90deg;" onclick="selectTheme('friendship')" data-theme="friendship">Friendship</div>
-            <div class="wheel-item" style="--angle: 120deg;" onclick="selectTheme('leadership')" data-theme="leadership">Leadership</div>
-            <div class="wheel-item" style="--angle: 150deg;" onclick="selectTheme('grief')" data-theme="grief">Grief</div>
-            <div class="wheel-item" style="--angle: 180deg;" onclick="selectTheme('identity')" data-theme="identity">Identity</div>
-            <div class="wheel-item" style="--angle: 210deg;" onclick="selectTheme('work')" data-theme="work">Work</div>
-            <div class="wheel-item" style="--angle: 240deg;" onclick="selectTheme('faith')" data-theme="faith">Faith</div>
-            <div class="wheel-item" style="--angle: 270deg;" onclick="selectTheme('technology')" data-theme="technology">Technology</div>
-            <div class="wheel-item" style="--angle: 300deg;" onclick="selectTheme('africa')" data-theme="africa">Africa</div>
-            <div class="wheel-item" style="--angle: 330deg;" onclick="selectTheme('civilization')" data-theme="civilization">Civilization</div>
-          </div>
+        <!-- Left: Topics Sidebar -->
+        <div class="topics-sidebar">
+          <button class="topic-menu-item active" onclick="selectTheme('purpose')" data-theme="purpose">Purpose</button>
+          <button class="topic-menu-item" onclick="selectTheme('loneliness')" data-theme="loneliness">Loneliness</button>
+          <button class="topic-menu-item" onclick="selectTheme('waiting')" data-theme="waiting">Waiting</button>
+          <button class="topic-menu-item" onclick="selectTheme('friendship')" data-theme="friendship">Friendship</button>
+          <button class="topic-menu-item" onclick="selectTheme('leadership')" data-theme="leadership">Leadership</button>
+          <button class="topic-menu-item" onclick="selectTheme('grief')" data-theme="grief">Grief</button>
+          <button class="topic-menu-item" onclick="selectTheme('identity')" data-theme="identity">Identity</button>
+          <button class="topic-menu-item" onclick="selectTheme('work')" data-theme="work">Work</button>
+          <button class="topic-menu-item" onclick="selectTheme('faith')" data-theme="faith">Faith</button>
+          <button class="topic-menu-item" onclick="selectTheme('technology')" data-theme="technology">Technology</button>
+          <button class="topic-menu-item" onclick="selectTheme('africa')" data-theme="africa">Africa</button>
+          <button class="topic-menu-item" onclick="selectTheme('civilization')" data-theme="civilization">Civilization</button>
         </div>
 
         <!-- Right: Theme Details Display -->
         <div class="theme-details-panel">
           <div class="theme-details-content" id="theme-details">
-            <div class="eyebrow" id="theme-eyebrow" style="color: var(--color-gold); margin-bottom: 16px;">Core Theme</div>
+            <div class="eyebrow" id="theme-eyebrow" style="color: var(--color-gold); margin-bottom: 16px;">Core Topic</div>
             <h3 class="theme-title" id="theme-title" style="font-family: var(--font-serif); font-size: clamp(36px, 4.5vw, 56px); font-weight: 300; margin-bottom: 20px; line-height: 1.1; color: var(--color-text-primary);">Purpose</h3>
             <p class="theme-tagline" id="theme-tagline" style="font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--color-gold); margin-bottom: 24px;">The quest for why we are here</p>
             <p class="theme-desc" id="theme-desc" style="font-size: 18px; line-height: 1.7; color: var(--color-text-secondary); margin-bottom: 40px; min-height: 100px;">To explore purpose is to ask not what we can achieve, but what we were intended to be. It is the recovery of intent in an age of accidents.</p>
