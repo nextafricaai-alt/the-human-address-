@@ -1964,4 +1964,104 @@ body.light-theme .back-link:hover {
   }
 }
 
+/* -- Highlights Section -- */
+.highlights-section {
+  background: var(--color-bg);
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .highlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+.highlight-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 146, 42, 0.1);
+  background: var(--color-bg-secondary);
+  aspect-ratio: 9/16;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+.highlight-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--color-gold);
+  box-shadow: 0 12px 30px rgba(201, 146, 42, 0.15);
+}
+.highlight-video-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.highlight-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.highlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.highlight-play-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.highlight-play-icon svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+}
+.highlight-card:hover .highlight-play-icon {
+  transform: scale(1.1);
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-bg);
+}
+.highlight-card:hover .highlight-overlay {
+  opacity: 0;
+}
+/* When playing, hide play button and overlay */
+.highlight-card.playing .highlight-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
