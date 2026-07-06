@@ -1579,6 +1579,24 @@ body.light-theme .back-link:hover {
   border-top: 1px solid var(--color-border-gold);
   border-bottom: 1px solid var(--color-border-gold);
 }
+
+.carousel-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/world-map.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.035;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.carousel-section > * {
+  position: relative;
+  z-index: 1;
+}
 .carousel-wrapper {
   max-width: var(--container-max-width);
   margin: 0 auto;
