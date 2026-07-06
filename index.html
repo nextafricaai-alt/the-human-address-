@@ -8,7 +8,7 @@
   <meta name="description" content="What did God mean when He made a human being? A cinematic thought-leadership platform on faith, leadership, family, technology, and the future. Hosted by Hudson Tumusiime.">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=52">
+  <link rel="stylesheet" href="css/styles.css?v=53">
 </head>
 <body>
 
@@ -308,7 +308,7 @@
         <!-- Reel 1 -->
         <div class="highlight-card reveal" data-delay="0.1">
           <div class="highlight-video-wrapper">
-            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628 (2)-1920.mp4"></video>
+            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628%20(2)-1920.mp4"></video>
             <div class="highlight-overlay">
               <div class="highlight-play-icon">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
@@ -319,7 +319,7 @@
         <!-- Reel 2 -->
         <div class="highlight-card reveal" data-delay="0.15">
           <div class="highlight-video-wrapper">
-            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628 (2)(2)-1920.mp4"></video>
+            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628%20(2)(2)-1920.mp4"></video>
             <div class="highlight-overlay">
               <div class="highlight-play-icon">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
@@ -330,7 +330,7 @@
         <!-- Reel 3 -->
         <div class="highlight-card reveal" data-delay="0.2">
           <div class="highlight-video-wrapper">
-            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628 (2)(3)-1920.mp4"></video>
+            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628%20(2)(3)-1920.mp4"></video>
             <div class="highlight-overlay">
               <div class="highlight-play-icon">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
@@ -341,7 +341,7 @@
         <!-- Reel 4 -->
         <div class="highlight-card reveal" data-delay="0.25">
           <div class="highlight-video-wrapper">
-            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628 (2)(4)-1920.mp4"></video>
+            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628%20(2)(4)-1920.mp4"></video>
             <div class="highlight-overlay">
               <div class="highlight-play-icon">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
@@ -352,7 +352,7 @@
         <!-- Reel 5 -->
         <div class="highlight-card reveal" data-delay="0.3">
           <div class="highlight-video-wrapper">
-            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628 (2)(5)-1920.mp4"></video>
+            <video class="highlight-video" loop muted playsinline preload="metadata" src="assets/0628%20(2)(5)-1920.mp4"></video>
             <div class="highlight-overlay">
               <div class="highlight-play-icon">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
@@ -723,36 +723,49 @@
     // --- Address Highlights Controller ---
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.highlight-card');
+      const isHoverSupported = window.matchMedia('(hover: hover)').matches;
       
       cards.forEach(card => {
         const video = card.querySelector('.highlight-video');
         
-        // Hover to play (Desktop)
-        card.addEventListener('mouseenter', () => {
-          video.play().then(() => {
-            card.classList.add('playing');
-          }).catch(err => {
-            console.log("Play failed: ", err);
-          });
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          video.pause();
-          card.classList.remove('playing');
-          video.currentTime = 0;
-        });
-        
-        // Tap/Click to play/pause (Mobile and fallback)
-        card.addEventListener('click', (e) => {
-          if (video.paused) {
+        if (isHoverSupported) {
+          // Hover to play (Desktop)
+          card.addEventListener('mouseenter', () => {
             video.play().then(() => {
               card.classList.add('playing');
+            }).catch(err => {
+              console.log("Play failed: ", err);
             });
-          } else {
+          });
+          
+          card.addEventListener('mouseleave', () => {
             video.pause();
             card.classList.remove('playing');
-          }
-        });
+            video.currentTime = 0;
+          });
+        } else {
+          // Tap/Click to play/pause (Mobile/Touch)
+          card.addEventListener('click', (e) => {
+            if (video.paused) {
+              // Pause all other highlight videos first
+              document.querySelectorAll('.highlight-video').forEach(v => {
+                if (v !== video) {
+                  v.pause();
+                  v.parentElement.parentElement.classList.remove('playing');
+                }
+              });
+              
+              video.play().then(() => {
+                card.classList.add('playing');
+              }).catch(err => {
+                console.log("Play failed on touch: ", err);
+              });
+            } else {
+              video.pause();
+              card.classList.remove('playing');
+            }
+          });
+        }
       });
     });
   </script>
