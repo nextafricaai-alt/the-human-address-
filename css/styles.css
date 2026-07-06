@@ -449,10 +449,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
   margin: 20px auto 28px;
   width: 100%;
-  max-width: 160px;
+  max-width: 480px;
 }
 
 .heading-divider::before,
