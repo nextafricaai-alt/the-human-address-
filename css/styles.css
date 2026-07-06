@@ -1576,6 +1576,8 @@ body.light-theme .back-link:hover {
   width: 100%;
   overflow: hidden;
   position: relative;
+  border-top: 1px solid rgba(240, 237, 230, 0.05);
+  border-bottom: 1px solid rgba(240, 237, 230, 0.05);
 }
 .carousel-wrapper {
   max-width: var(--container-max-width);
