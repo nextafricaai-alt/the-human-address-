@@ -24,7 +24,7 @@
   --font-serif: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   
-  --container-max-width: 1240px;
+  --container-max-width: 1440px;
   --header-height: 100px;
 }
 
@@ -1547,7 +1547,7 @@ body.light-theme .back-link:hover {
   position: relative;
 }
 .carousel-wrapper {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   position: relative;
 }
@@ -1721,7 +1721,7 @@ body.light-theme .back-link:hover {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 20px;
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
 }
 .moment-card {
@@ -1842,7 +1842,7 @@ body.light-theme .back-link:hover {
 .condition-grid {
   display: flex;
   gap: 64px;
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
 }
 .topics-sidebar {
@@ -1978,7 +1978,7 @@ body.light-theme .back-link:hover {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
 }
 @media (max-width: 1024px) {
