@@ -8,7 +8,7 @@
   <meta name="description" content="What did God mean when He made a human being? A cinematic thought-leadership platform on faith, leadership, family, technology, and the future. Hosted by Hudson Tumusiime.">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=57">
+  <link rel="stylesheet" href="css/styles.css?v=58">
 </head>
 <body>
 
@@ -733,39 +733,75 @@
         const video = card.querySelector('.highlight-video');
         
         if (isHoverSupported) {
-          // Hover to play (Desktop)
+          // --- Desktop Behavior (Hover + Click) ---
+          
+          // Hover-in: Play muted preview
           card.addEventListener('mouseenter', () => {
-            video.play().then(() => {
-              card.classList.add('playing');
-            }).catch(err => {
-              console.log("Play failed: ", err);
-            });
+            if (video.paused) {
+              video.muted = true;
+              video.play().then(() => {
+                card.classList.add('playing');
+              }).catch(err => {
+                console.log("Muted play preview failed: ", err);
+              });
+            }
           });
           
+          // Hover-out: Stop preview and reset
           card.addEventListener('mouseleave', () => {
             video.pause();
+            video.muted = true;
             card.classList.remove('playing');
             video.currentTime = 0;
           });
+          
+          // Click: Toggle play with sound (unmute)
+          card.addEventListener('click', (e) => {
+            if (!video.paused && !video.muted) {
+              video.pause();
+              video.muted = true;
+              card.classList.remove('playing');
+            } else {
+              // Pause all other highlight videos first
+              document.querySelectorAll('.highlight-video').forEach(v => {
+                v.pause();
+                v.muted = true;
+                v.parentElement.parentElement.classList.remove('playing');
+              });
+              
+              // Play this one unmuted from start
+              video.currentTime = 0;
+              video.muted = false;
+              video.play().then(() => {
+                card.classList.add('playing');
+              }).catch(err => {
+                console.log("Unmuted play failed: ", err);
+              });
+            }
+          });
+          
         } else {
-          // Tap/Click to play/pause (Mobile/Touch)
+          // --- Mobile/Touch Behavior (Tap to play with sound) ---
           card.addEventListener('click', (e) => {
             if (video.paused) {
               // Pause all other highlight videos first
               document.querySelectorAll('.highlight-video').forEach(v => {
-                if (v !== video) {
-                  v.pause();
-                  v.parentElement.parentElement.classList.remove('playing');
-                }
+                v.pause();
+                v.muted = true;
+                v.parentElement.parentElement.classList.remove('playing');
               });
               
+              // Play this one unmuted from start
+              video.currentTime = 0;
+              video.muted = false;
               video.play().then(() => {
                 card.classList.add('playing');
               }).catch(err => {
-                console.log("Play failed on touch: ", err);
+                console.log("Touch play failed: ", err);
               });
             } else {
               video.pause();
+              video.muted = true;
               card.classList.remove('playing');
             }
           });
