@@ -25,7 +25,7 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   
   --container-max-width: 1440px;
-  --header-height: 100px;
+  --header-height: 120px;
 }
 
 body.light-theme {
@@ -200,7 +200,7 @@ header {
 }
 
 .logo-img {
-  height: 72px;
+  height: 90px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -238,8 +238,8 @@ header {
 }
 
 .nav-link {
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-size: 13px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }
@@ -249,12 +249,12 @@ header {
 }
 
 .nav-btn {
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-size: 13px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-gold);
   border: 1px solid var(--color-border-gold);
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
