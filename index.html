@@ -236,30 +236,30 @@
 
     <div class="carousel-wrapper reveal">
       <div class="carousel-container" id="carousel-container">
-        <!-- Slide 0: Episode 13 -->
+        <!-- Slide 0: Episode 14 -->
         <div class="carousel-slide" data-index="0">
           <div class="carousel-media" id="media-0">
-            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/HYFhzE9r69M/maxresdefault.jpg');" onclick="playVideo(0, 'HYFhzE9r69M')">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/oZoUxK2eJVY/maxresdefault.jpg');" onclick="playVideo(0, 'oZoUxK2eJVY')">
               <div class="carousel-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
           </div>
         </div>
-        <!-- Slide 1: Episode 12 (Active by default) -->
+        <!-- Slide 1: Episode 13 -->
         <div class="carousel-slide" data-index="1">
           <div class="carousel-media" id="media-1">
-            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/GcgmrrFYSC0/maxresdefault.jpg');" onclick="playVideo(1, 'GcgmrrFYSC0')">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/HYFhzE9r69M/maxresdefault.jpg');" onclick="playVideo(1, 'HYFhzE9r69M')">
               <div class="carousel-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
           </div>
         </div>
-        <!-- Slide 2: Episode 11 -->
+        <!-- Slide 2: Episode 12 -->
         <div class="carousel-slide" data-index="2">
           <div class="carousel-media" id="media-2">
-            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/lohDmrW5MUA/maxresdefault.jpg');" onclick="playVideo(2, 'lohDmrW5MUA')">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/GcgmrrFYSC0/maxresdefault.jpg');" onclick="playVideo(2, 'GcgmrrFYSC0')">
               <div class="carousel-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
@@ -500,6 +500,14 @@
     const SLIDE_DATA = [
       {
         index: 0,
+        season: 'Season 1 · No. 14',
+        title: "The People Carrying Tomorrow",
+        excerpt: 'A Human Address to Every Builder.',
+        videoId: 'oZoUxK2eJVY',
+        readUrl: 'address.html?id=addr-14'
+      },
+      {
+        index: 1,
         season: 'Season 1 · No. 13',
         title: "Everyone Is Somebody's Child",
         excerpt: 'An address on parenting, inheritance, and the child in all of us.',
@@ -507,24 +515,16 @@
         readUrl: 'address.html?id=addr-13'
       },
       {
-        index: 1,
+        index: 2,
         season: 'Season 1 · No. 12',
         title: 'The Value of One Life',
         excerpt: 'A Human Address in Memory of Sydney Gongodyo',
         videoId: 'GcgmrrFYSC0',
         readUrl: 'address.html?id=addr-12'
-      },
-      {
-        index: 2,
-        season: 'Season 1 · No. 11',
-        title: 'The future of Africa is human',
-        excerpt: 'The question before any strategy: not what Africa can build, but who we are while we build it.',
-        videoId: 'lohDmrW5MUA',
-        readUrl: 'address.html?id=addr-11'
       }
     ];
 
-    let currentSlide = 1; // Default to center (Lord, What About Me?)
+    let currentSlide = 0; // Default to the latest (Slide 0)
 
     function updateSlider() {
       const slides = document.querySelectorAll('.carousel-slide');
