@@ -379,6 +379,12 @@ header {
   .nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  header.mobile-nav-open {
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: var(--color-mobile-menu-bg, rgba(10, 10, 10, 0.98)) !important;
+  }
 }
 
 /* Typography elements */

@@ -56,9 +56,12 @@ function initMobileNav() {
   const menu = document.querySelector('.mobile-menu');
   if (!toggle || !menu) return;
 
+  const header = document.querySelector('header');
+
   const close = () => {
     menu.classList.remove('open');
     toggle.classList.remove('open');
+    if (header) header.classList.remove('mobile-nav-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   };
@@ -66,6 +69,7 @@ function initMobileNav() {
   toggle.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     toggle.classList.toggle('open', isOpen);
+    if (header) header.classList.toggle('mobile-nav-open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
