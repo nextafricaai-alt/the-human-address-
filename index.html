@@ -28,7 +28,7 @@
   <meta property="twitter:image" content="assets/logo-gold.png">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=63">
+  <link rel="stylesheet" href="css/styles.css?v=64">
 </head>
 <body>
 
@@ -256,30 +256,30 @@
 
     <div class="carousel-wrapper reveal">
       <div class="carousel-container" id="carousel-container">
-        <!-- Slide 0: Episode 15 -->
+        <!-- Slide 0: Episode 16 -->
         <div class="carousel-slide" data-index="0">
           <div class="carousel-media" id="media-0">
-            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/6QQNl5dBzFg/maxresdefault.jpg');" onclick="playVideo(0, '6QQNl5dBzFg')">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/BZid3BjOed8/maxresdefault.jpg');" onclick="playVideo(0, 'BZid3BjOed8')">
               <div class="carousel-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
           </div>
         </div>
-        <!-- Slide 1: Episode 14 -->
+        <!-- Slide 1: Episode 15 -->
         <div class="carousel-slide" data-index="1">
           <div class="carousel-media" id="media-1">
-            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/oZoUxK2eJVY/maxresdefault.jpg');" onclick="playVideo(1, 'oZoUxK2eJVY')">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/6QQNl5dBzFg/maxresdefault.jpg');" onclick="playVideo(1, '6QQNl5dBzFg')">
               <div class="carousel-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
           </div>
         </div>
-        <!-- Slide 2: Episode 13 -->
+        <!-- Slide 2: Episode 14 -->
         <div class="carousel-slide" data-index="2">
           <div class="carousel-media" id="media-2">
-            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/HYFhzE9r69M/maxresdefault.jpg');" onclick="playVideo(2, 'HYFhzE9r69M')">
+            <div class="carousel-media-placeholder" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/oZoUxK2eJVY/maxresdefault.jpg');" onclick="playVideo(2, 'oZoUxK2eJVY')">
               <div class="carousel-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
@@ -290,9 +290,9 @@
 
       <!-- Active Slide Details -->
       <div class="carousel-details">
-        <div class="eyebrow" id="active-eyebrow" style="margin-bottom: 12px; color: var(--color-gold);">Season 1 · No. 15</div>
-        <h2 class="latest-title" id="active-title" style="margin-bottom: 16px; font-size: clamp(28px, 3.5vw, 44px); font-family: var(--font-serif); font-weight: 300;">Love Was Never in the Fees</h2>
-        <p class="latest-excerpt" id="active-excerpt" style="max-width: 800px; margin: 0 auto 32px; font-size: 18px; line-height: 1.6; color: var(--color-text-secondary);">The Teacher — An address to teachers, mentors, and those who invest beyond the transaction.</p>
+        <div class="eyebrow" id="active-eyebrow" style="margin-bottom: 12px; color: var(--color-gold);">Season 1 · No. 16</div>
+        <h2 class="latest-title" id="active-title" style="margin-bottom: 16px; font-size: clamp(28px, 3.5vw, 44px); font-family: var(--font-serif); font-weight: 300;">They Will Not Pay You For What You Know</h2>
+        <p class="latest-excerpt" id="active-excerpt" style="max-width: 800px; margin: 0 auto 32px; font-size: 18px; line-height: 1.6; color: var(--color-text-secondary);">The value of execution, authority, and character over information in the age of intelligence.</p>
         
         <div class="latest-actions" style="justify-content: center; gap: 20px; display: flex; align-items: center;">
           <a href="address.html" id="active-read-link" class="btn-primary">Watch & Read</a>
@@ -511,13 +511,21 @@
   </footer>
 
   <!-- Main JavaScript File -->
-  <script src="js/app.js?v=21"></script>
+  <script src="js/app.js?v=22"></script>
   
   <!-- Centered Video Slider Logic -->
   <script>
     const SLIDE_DATA = [
       {
         index: 0,
+        season: 'Season 1 · No. 16',
+        title: "They Will Not Pay You For What You Know",
+        excerpt: 'The value of execution, authority, and character over information in the age of intelligence.',
+        videoId: 'BZid3BjOed8',
+        readUrl: 'address.html?id=addr-16'
+      },
+      {
+        index: 1,
         season: 'Season 1 · No. 15',
         title: "Love Was Never in the Fees",
         excerpt: 'The Teacher — An address to teachers, mentors, and those who invest beyond the transaction.',
@@ -525,20 +533,12 @@
         readUrl: 'address.html?id=addr-15'
       },
       {
-        index: 1,
+        index: 2,
         season: 'Season 1 · No. 14',
         title: "The People Carrying Tomorrow",
         excerpt: 'A Human Address to Every Builder.',
         videoId: 'oZoUxK2eJVY',
         readUrl: 'address.html?id=addr-14'
-      },
-      {
-        index: 2,
-        season: 'Season 1 · No. 13',
-        title: "Everyone Is Somebody's Child",
-        excerpt: 'An address on parenting, inheritance, and the child in all of us.',
-        videoId: 'HYFhzE9r69M',
-        readUrl: 'address.html?id=addr-13'
       }
     ];
 
